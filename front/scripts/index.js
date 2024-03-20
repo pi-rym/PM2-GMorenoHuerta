@@ -1,1 +1,2 @@
-console.log(tempData);
+const getfilms = require("./handler");
+getfilms();

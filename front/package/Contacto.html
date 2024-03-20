@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Contacto</title>
+    <!-- Enlace al CSS de Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: blue; /* Cambio del color del título a azul */
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .contact-card {
+            max-width: 400px; /* Disminución del ancho máximo de la tarjeta */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white py-4">
+        <h1>Perfil de Contacto</h1>
+    </header>
+
+    <div class="container">
+        <form id="contactForm">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" class="form-control" id="asunto" name="asunto" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-dark">Enviar</button>
+        </form>
+
+        <!-- Contenedor para las tarjetas de contacto -->
+        <div id="contactCardsContainer"></div>
+    </div>
+
+    <!-- Enlace al script de Bootstrap (opcional si quieres usar componentes de JavaScript) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script para validar el formulario y mostrar las tarjetas de contacto -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("contactForm");
+            const contactCardsContainer = document.getElementById("contactCardsContainer");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                if (form.checkValidity()) {
+                    const nombre = document.getElementById("nombre").value;
+                    const email = document.getElementById("email").value;
+                    const telefono = document.getElementById("telefono").value;
+                    const asunto = document.getElementById("asunto").value;
+                    const mensaje = document.getElementById("mensaje").value;
+
+                    // Crear la tarjeta de contacto
+                    const contactCard = document.createElement("div");
+                    contactCard.classList.add("contact-card");
+                    contactCard.innerHTML = `
+                        <h3>${nombre}</h3>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Teléfono:</strong> ${telefono}</p>
+                        <p><strong>Asunto:</strong> ${asunto}</p>
+                        <p><strong>Mensaje:</strong> ${mensaje}</p>
+                        <button class="btn btn-danger delete-btn">Eliminar</button>
+                    `;
+
+                    // Agregar la tarjeta al contenedor
+                    contactCardsContainer.appendChild(contactCard);
+
+                    // Limpiar el formulario
+                    form.reset();
+                } else {
+                    alert("Por favor completa todos los campos correctamente.");
+                }
+            });
+
+            // Agregar un evento para eliminar tarjetas al hacer clic en el botón "Eliminar"
+            contactCardsContainer.addEventListener("click", function(event) {
+                if (event.target.classList.contains("delete-btn")) {
+                    event.target.parentElement.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

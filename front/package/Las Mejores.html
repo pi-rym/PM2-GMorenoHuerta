@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Mejores Películas de Todos los Tiempos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            counter-increment: movie-counter;
+        }
+        li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        li a:hover {
+            text-decoration: underline;
+        }
+        li:before {
+            content: counter(movie-counter) ". ";
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Las Mejores Películas de Todos los Tiempos</h1>
+    </header>
+    <main>
+        <ul>
+            <li><a href="#">The Shawshank Redemption (1994)</a></li>
+            <li><a href="#">The Godfather (1972)</a></li>
+            <li><a href="#">The Dark Knight (2008)</a></li>
+            <li><a href="#">The Godfather: Part II (1974)</a></li>
+            <li><a href="#">12 Angry Men (1957)</a></li>
+            <li><a href="#">Schindler's List (1993)</a></li>
+            <li><a href="#">The Lord of the Rings: The Return of the King (2003)</a></li>
+            <li><a href="#">Pulp Fiction (1994)</a></li>
+            <li><a href="#">The Lord of the Rings: The Fellowship of the Ring (2001)</a></li>
+            <li><a href="#">Fight Club (1999)</a></li>
+            <li><a href="#">Forrest Gump (1994)</a></li>
+            <li><a href="#">Inception (2010)</a></li>
+            <li><a href="#">The Matrix (1999)</a></li>
+            <li><a href="#">The Silence of the Lambs (1991)</a></li>
+            <li><a href="#">The Green Mile (1999)</a></li>
+            <li><a href="#">Se7en (1995)</a></li>
+            <li><a href="#">The Usual Suspects (1995)</a></li>
+            <li><a href="#">Léon: The Professional (1994)</a></li>
+            <li><a href="#">Saving Private Ryan (1998)</a></li>
+            <li><a href="#">Interstellar (2014)</a></li>
+        </ul>
+    </main>
+</body>
+</html>
