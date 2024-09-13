@@ -4,38 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Contacto</title>
-    <!-- Enlace al CSS de Bootstrap -->
+    <link rel="stylesheet" href="../styles/styles.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: blue; /* Cambio del color del título a azul */
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            margin-top: 20px;
-        }
-        .contact-card {
-            max-width: 400px; /* Disminución del ancho máximo de la tarjeta */
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 <body>
-    <header class="bg-dark text-white py-4">
-        <h1>Perfil de Contacto</h1>
+
+    <!-- Encabezado con navegación -->
+    <header>
+        <div class="header-content">
+            <img src="../assets/pelicula 1.jpeg" alt="Descripción de la imagen">
+            <h1><span class="cinema">¡"MI CINEMA"!</span></h1>
+        </div>
+        <nav>
+            <a href="Top Ten.html">Top Ten</a>
+            <a href="Imagenes.html">Imagenes-bootstrap</a>
+            <a href="../index.html">Home</a>
+            <a href="Contacto.html">Contacto</a>
+            <a href="FormFilm.html">Crear Pelis</a>
+        </nav>
     </header>
 
+    <!-- Línea divisoria entre el encabezado y el contenido -->
+    <hr style="border: 1px solid #ccc; margin: 20px 0;">
+
+    <!-- Contenido principal -->
     <div class="container">
+        <h2>Perfil de Contacto</h2>
         <form id="contactForm">
             <div class="row">
                 <div class="col-sm-6">
@@ -75,10 +69,10 @@
         <div id="contactCardsContainer"></div>
     </div>
 
-    <!-- Enlace al script de Bootstrap (opcional si quieres usar componentes de JavaScript) -->
+    <!-- Enlace al script de Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Script para validar el formulario y mostrar las tarjetas de contacto -->
+    <!-- Script para manejar el formulario y las tarjetas -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const form = document.getElementById("contactForm");
@@ -116,7 +110,7 @@
                 }
             });
 
-            // Agregar un evento para eliminar tarjetas al hacer clic en el botón "Eliminar"
+            // Eliminar tarjetas al hacer clic en el botón "Eliminar"
             contactCardsContainer.addEventListener("click", function(event) {
                 if (event.target.classList.contains("delete-btn")) {
                     event.target.parentElement.remove();
@@ -124,5 +118,6 @@
             });
         });
     </script>
+
 </body>
 </html>

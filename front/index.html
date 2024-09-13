@@ -3,74 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Contacto</title>
-    <!-- Enlace al CSS de Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Mi Página de Cine</title>
 </head>
 <body>
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./styles/styles.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    
-        <title>Mi Página de Cine</title>
-    </head>
-    <body>
-        <header>
-            <div class="header-content">
-                <img src="assets/pelicula 1.jpeg" alt="Descripción de la imagen">
-                <h1><span class="cinema">¡"MI CINEMA"!</span></h1>
-            </div>
-            <nav>
-                <a href="package/Top Ten.html">Top Ten</a>
-                <a href="package/Imagenes.html">Imagenes</a>
-                <a href="package/Las Mejores.html">Las Mejores</a>
-                <a href="package/Contacto.html">Contacto-bootstrap</a>
-            </nav>
-            
-        </header>
-        <!-- Segunda sección -->
-        <section id="seccion-2"> 
-            <!-- Agrega un elemento h2 con el id "peliculas-favoritas" -->
-            <h2 id="peliculas-favoritas">PELICULAS FAVORITAS</h2>
-            <!-- Contenedor de tarjetas -->
-            <div id="films" class="tarjeta-container"></div>
-        </section>
-        
-        <script>
-            const filmsSection = document.getElementById("films");
-        
-            function renderFilms(movie) {
-                const movieElement = document.createElement("article");
-                const containerMovie = document.createElement("div");
-                movieElement.classList.add("movie");
-                containerMovie.classList.add("divMovie");
-                movieElement.innerHTML = `<img src="${movie.poster}" alt="${movie.title}" >`;
-        
-                containerMovie.innerHTML = `
-                    <h2 class="movie-title">${movie.title} (${movie.year})</h2>
-                    <p><strong>Director:</strong> ${movie.director}</p>
-                    <p><strong>Duración:</strong> ${movie.duration}</p>
-                    <p><strong>Género:</strong> ${movie.genre.join(", ")}</p>
-                    <p><strong>Rate:</strong> ${movie.rate}</p>
-                `;
-        
-                filmsSection.appendChild(movieElement);
-                movieElement.appendChild(containerMovie);
-            }
-        
-            $.get('https://students-api.up.railway.app/movies', 
-                function(data) {
-                    data.forEach(renderFilms);
-                })
-                .fail(function() {
-                    console.error("Error al cargar los datos de la película.");
-                });
-        </script>
-        <script src="./dist/bundle.js"></script>
-    </body>
-    </html>
-    
+    <header>
+        <div class="header-content">
+            <img src="assets/pelicula 1.jpeg" alt="Descripción de la imagen">
+            <h1><span class="cinema">¡"MI CINEMA"!</span></h1>
+        </div>
+        <nav>
+            <a href="package/Top Ten.html">Top Ten</a>
+            <a href="package/Imagenes.html">Imagenes-bootstrap</a>
+            <a href="../index.html">Home</a> 
+            <a href="package/Contacto.html">Contacto</a>
+            <a href="package/FormFilm.html">Crear Pelis</a>
+        </nav>
+    </header>
+
+    <!-- Segunda sección -->
+    <section id="seccion-2"> 
+    </section>
+
+    <!-- Tercera sección -->
+    <section id="seccion-3"> 
+        <!-- Contenedor de tarjetas -->
+        <div id="tarjeta-container" class="tarjeta-container"></div>
+    </section>
+
+    <script src="./browser/index.js"></script>
+</body>
+</html>
