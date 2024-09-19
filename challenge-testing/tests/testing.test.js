@@ -1,7 +1,6 @@
 
 
-const { CarritoDeCompra } = require("./index"); // Importa la clase CarritoDeCompra
-
+const { CarritoDeCompra } = require("./index"); 
 let nuevoCarrito;
 let producto;
 let invalidInputs;

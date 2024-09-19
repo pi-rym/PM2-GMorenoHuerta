@@ -5,7 +5,6 @@ function createMovieCards(data) {
       const tarjeta = document.createElement("div");
       tarjeta.classList.add("tarjeta");
   
-      // HTML para la tarjeta de película
       tarjeta.innerHTML = `
         <h3 class="titulo"><a href="#">${movie.title}</a></h3>
         <img class="poster" src="${movie.poster}" alt="${movie.title} Poster">

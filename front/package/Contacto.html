@@ -69,10 +69,8 @@
         <div id="contactCardsContainer"></div>
     </div>
 
-    <!-- Enlace al script de Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Script para manejar el formulario y las tarjetas -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const form = document.getElementById("contactForm");
@@ -100,17 +98,17 @@
                         <button class="btn btn-danger delete-btn">Eliminar</button>
                     `;
 
-                    // Agregar la tarjeta al contenedor
+                   
                     contactCardsContainer.appendChild(contactCard);
 
-                    // Limpiar el formulario
+               
                     form.reset();
                 } else {
                     alert("Por favor completa todos los campos correctamente.");
                 }
             });
 
-            // Eliminar tarjetas al hacer clic en el botón "Eliminar"
+            
             contactCardsContainer.addEventListener("click", function(event) {
                 if (event.target.classList.contains("delete-btn")) {
                     event.target.parentElement.remove();

@@ -10,7 +10,7 @@ const dbCon = async () => {
         console.log(process.env.MONGO_URI);
     } catch (error) {
         console.error("Error al conectar a la base de datos:", error);
-        process.exit(1); // Cerrar el proceso si ocurre un error
+        process.exit(1); 
     }
 };
 

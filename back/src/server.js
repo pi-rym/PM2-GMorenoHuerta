@@ -17,5 +17,5 @@ app.use(express.json());  // Middleware necesario para leer JSON en el body
 app.use(movieRoutes);
 console.log("Rutas cargadas");
 
-// Exporta la app
+
 module.exports = app;

@@ -9,7 +9,7 @@ header {
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centra el contenido horizontalmente */
+  justify-content: center; 
 }
 
 .header-content img {
@@ -32,7 +32,7 @@ header {
 /* Estilos para la navegación */
 nav {
   display: flex;
-  justify-content: flex-end; /* Mueve los enlaces a la derecha */
+  justify-content: flex-end; 
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 5px 0;
@@ -42,14 +42,14 @@ nav a {
   text-decoration: none;
   color: white;
   padding: 5px 10px;
-  margin: 0 15px; /* Ajusta el espacio entre enlaces */
+  margin: 0 15px; 
   border: 1px solid white;
-  transition: background-color 0.3s ease; /* Transición para el hover */
+  transition: background-color 0.3s ease; 
 }
 
 nav a:hover {
-  background-color: #03fad5; /* Color de fondo en hover */
-  color: #2c013f; /* Color del texto en hover */
+  background-color: #03fad5; 
+  color: #2c013f; 
 }
 
 nav a:last-child {

@@ -5,26 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imágenes de Películas</title>
     <link rel="stylesheet" href="../styles/styles.css">
-</head>
-<body>
-
-    <!-- Encabezado con navegación -->
-    <header>
-        <div class="header-content">
-            <img src="../assets/pelicula 1.jpeg" alt="Descripción de la imagen">
-            <h1><span class="cinema">¡"MI CINEMA"!</span></h1>
-        </div>
-        <nav>
-            <a href="Top Ten.html">Top Ten</a>
-            <a href="Imagenes.html">Imagenes-bootstrap</a>
-            <a href="../index.html">Home</a> <!-- Botón para volver a la página principal -->
-            <a href="Contacto.html">Contacto</a>
-            <a href="FormFilm.html">Crear Pelis</a>
-        </nav>
-    </header>
-    
-    
-    <!-- Incluye Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -35,60 +15,70 @@
         }
 
         .container {
-    max-width: 300px;
-    margin: 20px auto;
-}
+            max-width: 300px;
+            margin: 20px auto;
+        }
 
-/* Estilos para el carrusel */
-.carousel-container {
-    height: 150px; /* Ajusta esta altura según lo necesites para el carrusel */
-    margin-bottom: 20px;
-}
+        .carousel-container {
+            height: 150px; 
+            margin-bottom: 20px;
+        }
 
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Las imágenes se ajustarán dentro del contenedor sin distorsionarse */
-}
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
 
-/* Estilos para la imagen seleccionada */
-.selected-image {
+        /* Estilos para la imagen seleccionada */
+        .selected-image {
             text-align: center;
             margin-top: 20px;
-            height: 600px; /* Ajusta esta altura según lo necesites para la imagen seleccionada */
+            height: 600px; 
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Coloca el título encima de la imagen */
+            flex-direction: column;
         }
 
         .selected-image img {
-            max-width: 300%;
-            height: 300%;
-            object-fit: contain; /* Las imágenes se mostrarán completas dentro del espacio disponible */
+            max-width: 100%; 
+            height: auto;
+            object-fit: contain; 
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: relative; /* Necesario para poder mover la imagen */
-            top: 20; /* Esto te permitirá ajustar la posición vertical */
-            transition: top 0.3s ease; /* Suaviza el movimiento cuando la imagen se mueve */
+            transition: transform 0.3s ease;
         }
 
         .selected-image img:active {
             cursor: grabbing;
-            top: 50px; /* Ajusta este valor para mover la imagen hacia abajo mientras haces clic y arrastras */
+            transform: translateY(50px); /* Cambiado a translateY */
         }
 
         .selected-image h3 {
-            margin-bottom: 10px; /* Agrega un margen entre el título y la imagen */
-            text-align: center; /* Centra el texto */
+            margin-bottom: 10px; 
+            text-align: center;
         }
-
     </style>
 </head>
 
 <body>
+    <header>
+        <div class="header-content">
+            <img src="../assets/pelicula 1.jpeg" alt="Descripción de la imagen">
+            <h1><span class="cinema">¡"MI CINEMA"!</span></h1>
+        </div>
+        <nav>
+            <a href="Top Ten.html">Top Ten</a>
+            <a href="Imagenes.html">Imágenes-bootstrap</a>
+            <a href="../index.html">Inicio</a> 
+            <a href="Contacto.html">Contacto</a>
+            <a href="FormFilm.html">Crear Pelis</a>
+        </nav>
+    </header>
+
     <div class="container">
-        <!-- Primera sección: Carrusel de Bootstrap con tamaño ajustado -->
+        <!-- Carrusel de Bootstrap -->
         <div id="carouselExampleControls" class="carousel slide carousel-container" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -124,22 +114,21 @@
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">Anterior</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">Siguiente</span>
             </a>
         </div>
 
-        <!-- Segunda sección: Imagen seleccionada con tamaño independiente -->
+        <!-- Imagen seleccionada -->
         <div class="selected-image">
             <h3>Imagen seleccionada:</h3>
             <img id="selectedImage" src="../assets/imagen 1.jpeg" alt="Imagen Seleccionada">
         </div>
     </div>
 
-    <!-- Incluye jQuery, Popper.js y Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -151,5 +140,4 @@
         });
     </script>
 </body>
-
 </html>

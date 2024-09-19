@@ -19,7 +19,7 @@ const movieSchema = new mongoose.Schema({
         required: true
     },
     genre: {
-        type: [String],  // Un array de géneros
+        type: [String], 
         required: true
     },
     rate: {
@@ -27,10 +27,9 @@ const movieSchema = new mongoose.Schema({
         required: true
     },
     poster: {
-        type: String,  // URL de la imagen del póster
+        type: String,  
         required: true
     }
 });
 
-// Exportar el modelo de Movie basado en el schema
 module.exports = mongoose.model("Movie", movieSchema);

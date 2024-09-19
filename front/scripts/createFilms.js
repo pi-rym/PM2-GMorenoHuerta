@@ -17,15 +17,15 @@ function renderGenres() {
     options.innerHTML = '';  // Limpia el contenido previo
 
     for (const genre of genres) {
-        const input = document.createElement('input'); // Crea el checkbox
-        const label = document.createElement('label'); // Crea la etiqueta
+        const input = document.createElement('input'); 
+        const label = document.createElement('label'); 
 
         input.type = 'checkbox';
-        input.id = genre;       // Asigna el id al checkbox
-        input.name = 'genre[]'; // Asigna el nombre del grupo de checkboxes
-        input.value = genre;    // Asigna el valor del checkbox
+        input.id = genre;       
+        input.name = 'genre[]'; 
+        input.value = genre;    
 
-        label.htmlFor = genre;  // Relaciona el label con el checkbox
+        label.htmlFor = genre;  
         label.textContent = genre;
 
         options.appendChild(input);
@@ -36,7 +36,7 @@ function renderGenres() {
 
 renderGenres();
 
-// Validar los checkboxes seleccionados
+
 function validateCheckboxes() {
     const checkboxes = document.querySelectorAll('input[name="genre[]"]');
     const genres = [];
@@ -52,12 +52,12 @@ function validateCheckboxes() {
 
 // Manejar el envío del formulario
 async function handlerSubmit(event) {
-    event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+    event.preventDefault(); 
     const genres = validateCheckboxes();
 
     // Verifica si todos los campos tienen un valor
     if (![title.value, year.value, director.value, duration.value, rate.value, poster.value, genres.length].every(Boolean)) {
-        return alert('Faltan llenar campos'); // Muestra un mensaje si faltan campos
+        return alert('Faltan llenar campos'); 
     }
 
     const movie = {
@@ -72,7 +72,7 @@ async function handlerSubmit(event) {
 
     try {
         const { data } = await axios.post("http://localhost:3000/movies", movie);
-        console.log(data);  // Muestra la respuesta completa en lugar de solo `data.response`
+        console.log(data);  
         alert("Película enviada");
     } catch (error) {
         console.error("Error al enviar la película:", error);
@@ -80,7 +80,6 @@ async function handlerSubmit(event) {
     }
 }
 
-// Limpiar los campos del formulario
 function cleanInputs() {
     title.value = '';
     year.value = '';
